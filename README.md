@@ -1,4 +1,4 @@
-# bin2dec
+# bin2dec [![Netlify Status](https://api.netlify.com/api/v1/badges/b94bca4f-8729-4ca8-afd0-de26d669acc0/deploy-status)](https://app.netlify.com/sites/lucid-haibt-98f962/deploys)
 
 **Tier:** 1-Beginner
 
