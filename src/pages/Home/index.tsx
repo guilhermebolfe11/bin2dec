@@ -1,60 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   CardContent,
   CardHeader,
   Grid,
   TextField,
+  Typography,
 } from '@material-ui/core';
-import { useTranslation } from 'react-i18next';
-import * as Yup from 'yup';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 
 const Home: React.FC = () => {
-  const { t } = useTranslation();
-  const loginSchema = Yup.object().shape({
-    email: Yup.string().email('Email é invalido').required('Obrigatório'),
-    password: Yup.string().required('Obrigatório'),
-  });
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(loginSchema),
-  });
+  const [number, setNumber] = useState<number>();
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState('');
 
-  const onSubmit = (values: any) => {
-    console.log(values);
+  const convertToDec = (bin: string) => {
+    let convertedNum = 0;
+    bin
+      .split('')
+      .reverse()
+      .forEach((item: string, index: number) => {
+        if (item === '1') convertedNum += 2 ** index;
+      });
+    return convertedNum;
+  };
+
+  const handleOnChange = (bin: string) => {
+    if (bin.length > 0) {
+      const regexp = new RegExp('\\b[01]+\\b');
+
+      if (!regexp.test(bin)) {
+        setError(true);
+        setMessage('So pode conter 0 ou 1');
+        return;
+      }
+      setError(false);
+      setMessage('');
+
+      const dec = convertToDec(bin);
+      setNumber(dec);
+    } else {
+      setNumber(undefined);
+    }
   };
 
   return (
-    <Grid container direction="row" alignItems="center" justify="center">
+    <Grid
+      container
+      direction="row"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: '100vh' }}
+    >
       <Grid item>
         <Card elevation={3} style={{ minWidth: 300 }}>
-          <CardHeader title={t('SignIn.Title')} />
+          <CardHeader title="Bin2Dec" />
           <CardContent>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <Grid
-                direction="column"
-                alignItems="center"
-                justify="center"
-                alignContent="center"
-              >
-                <Grid item style={{ marginBottom: 10 }}>
-                  <TextField
-                    name="email"
-                    variant="outlined"
-                    label="Email address"
-                    fullWidth
-                    inputRef={register}
-                    error={!!errors.email}
-                    helperText={errors.email ? errors.email.message : ''}
-                  />
-                </Grid>
-                <Grid item style={{ marginBottom: 10 }} />
-                <Grid item style={{ marginBottom: 10 }} />
-                <Grid item style={{ marginBottom: 10 }} />
-                <Grid item />
+            <Grid
+              container
+              direction="column"
+              alignItems="center"
+              justify="center"
+              alignContent="center"
+            >
+              <Grid item style={{ marginBottom: 10 }}>
+                <TextField
+                  name="bin"
+                  variant="outlined"
+                  label="Binário"
+                  fullWidth
+                  error={error}
+                  helperText={message || ''}
+                  onChange={e => handleOnChange(e.target.value)}
+                  inputProps={{ maxLength: 24 }}
+                />
               </Grid>
-            </form>
+              <Grid item>
+                <Typography variant="h6">{number}</Typography>
+              </Grid>
+            </Grid>
           </CardContent>
         </Card>
       </Grid>
