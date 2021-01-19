@@ -2,6 +2,10 @@
 yarn.lock
 package.lock.json
 
+# builds
+build
+dist
+
 # Logs
 logs
 *.log

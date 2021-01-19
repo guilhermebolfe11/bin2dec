@@ -1,7 +1,6 @@
 {
   "env": {
-    "browser": true,
-    "es2021": true
+    "browser": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -15,7 +14,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
@@ -34,7 +33,9 @@
         "tsx": "never"
       }
     ],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"]
   },
   "settings": {
     "import/resolver": {

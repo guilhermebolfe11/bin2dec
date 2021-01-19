@@ -1,15 +1,13 @@
 import React from 'react';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div>
       <header>
-        <p>
-          Bin2Dec
-        </p>
+        <p>Bin2Dec</p>
       </header>
     </div>
   );
-}
+};
 
 export default App;
