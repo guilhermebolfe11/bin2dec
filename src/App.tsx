@@ -1,13 +1,6 @@
 import React from 'react';
+import AppProviders from './providers';
 
-const App: React.FC = () => {
-  return (
-    <div>
-      <header>
-        <p>Bin2Dec</p>
-      </header>
-    </div>
-  );
-};
+const App: React.FC = () => <AppProviders />;
 
 export default App;
