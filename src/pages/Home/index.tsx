@@ -6,6 +6,7 @@ import {
   Grid,
   TextField,
   Typography,
+  CardActions,
 } from '@material-ui/core';
 
 const Home: React.FC = () => {
@@ -30,7 +31,7 @@ const Home: React.FC = () => {
 
       if (!regexp.test(bin)) {
         setError(true);
-        setMessage('So pode conter 0 ou 1');
+        setMessage('Enter only 0 or 1');
         return;
       }
       setError(false);
@@ -66,12 +67,15 @@ const Home: React.FC = () => {
                 <TextField
                   name="bin"
                   variant="outlined"
-                  label="Binário"
+                  label="Binary"
                   fullWidth
+                  autoComplete="off"
                   error={error}
                   helperText={message || ''}
                   onChange={e => handleOnChange(e.target.value)}
-                  inputProps={{ maxLength: 24 }}
+                  inputProps={{
+                    maxLength: 24,
+                  }}
                 />
               </Grid>
               <Grid item>
