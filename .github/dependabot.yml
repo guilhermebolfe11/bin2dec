@@ -1,0 +1,17 @@
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/" 
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "Update npm: "
+      prefix-development: "Update npm-dev:"
+    labels:
+      - "npm"
+      - "dependencies"
+    pull-request-branch-name:
+      separator: "-"
+    reviewers:
+      - "guilhermebolfe11"
