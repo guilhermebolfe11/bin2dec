@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/" 
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     commit-message:
       prefix: "Update npm: "
       prefix-development: "Update npm-dev:"
