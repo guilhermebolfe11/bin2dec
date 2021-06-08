@@ -1,6 +1,5 @@
-# bin2dec
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b94bca4f-8729-4ca8-afd0-de26d669acc0/deploy-status)](https://app.netlify.com/sites/lucid-haibt-98f962/deploys) ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Release](https://img.shields.io/github/v/release/guilhermebolfe11/bin2dec)
+# bin2dec
 
 **Tier:** 1-Beginner
 
@@ -21,6 +20,12 @@ constraints:
   example the natural logarithm. It's up to you to figure out which function
   to use.
 
+## Badges
+
+![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)
+![Netlify Status](https://api.netlify.com/api/v1/badges/b94bca4f-8729-4ca8-afd0-de26d669acc0/deploy-status)
+![Release](https://img.shields.io/github/v/release/guilhermebolfe11/bin2dec)
+
 ## User Stories
 
 - [x] User can enter up to 8 binary digits in one input field
@@ -35,17 +40,13 @@ constraints:
 
 [Binary number system](https://en.wikipedia.org/wiki/Binary_number)
 
-## Prerequisites
+## Run Locally
 
 What you need to install to use the software locally
 
 - NodeJs
 - Npm or Yarn
 - React
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### Start
 
@@ -77,4 +78,4 @@ Your app is ready to be deployed!
 
 ## License
 
-Usage is provided under the [MIT License](https://github.com/guilhermebolfe11/bin2dec/blob/master/LICENSE). See LICENSE for the full details.
+[MIT License](https://github.com/guilhermebolfe11/bin2dec/blob/master/LICENSE)
