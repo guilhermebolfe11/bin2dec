@@ -1,4 +1,3 @@
-
 # bin2dec
 
 **Tier:** 1-Beginner
@@ -23,7 +22,7 @@ constraints:
 ## Badges
 
 ![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)
-![Netlify Status](https://api.netlify.com/api/v1/badges/b94bca4f-8729-4ca8-afd0-de26d669acc0/deploy-status)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3e8e186c-b9b8-4b35-88ea-911e74378b6b/deploy-status)](https://app.netlify.com/sites/brave-cray-43db09/deploys)
 ![Release](https://img.shields.io/github/v/release/guilhermebolfe11/bin2dec)
 
 ## User Stories
