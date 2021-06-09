@@ -41,9 +41,7 @@ const Home: React.FC = () => {
 
       const dec = convertToDec(bin);
       setNumber(dec);
-    } else {
-      setNumber(undefined);
-    }
+    } else setNumber(undefined);
   };
 
   return (
